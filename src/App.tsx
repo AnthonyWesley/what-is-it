@@ -1,6 +1,6 @@
 import * as S from "./Global";
 
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, HashRouter } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Game from "./pages/Game";
@@ -12,7 +12,7 @@ export default function App() {
   const hasUser = app.users.length > 0;
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <S.Container>
         <Routes>
           <Route path="/" element={<Home />}></Route>
@@ -25,7 +25,7 @@ export default function App() {
           ></Route>
         </Routes>
       </S.Container>
-    </BrowserRouter>
+    </HashRouter>
 
     //
   );
