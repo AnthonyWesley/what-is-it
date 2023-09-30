@@ -44,7 +44,7 @@ export default function Home() {
         )) || (
           <HomeInput
             type="text"
-            placeholder="Nome... *Deve ter acima de 2 caracteres."
+            placeholder="Nome... *Deve ter acima de 2 caracteres*."
             onChange={app.handleTextValue}
           />
         )}

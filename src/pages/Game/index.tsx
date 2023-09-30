@@ -47,17 +47,17 @@ export default function Game() {
         <ScoreArea />
         <KeyboardArea />
         <FooterArea />
-        {modalData && (
-          <Modal
-            activeModal={true}
-            title={modalData.title}
-            text={modalData.message}
-            icon={modalData.icon}
-            buttonActionText="Jogar Novamente!"
-            funcActions={{ funcOne: () => location.reload() }}
-          />
-        )}
       </S.Box>
+      {modalData && (
+        <Modal
+          activeModal={true}
+          title={modalData.title}
+          text={modalData.message}
+          icon={modalData.icon}
+          buttonActionText="Jogar Novamente!"
+          funcActions={{ funcOne: () => location.reload() }}
+        />
+      )}
     </>
   );
 }

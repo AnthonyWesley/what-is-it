@@ -1,5 +1,4 @@
 import * as S from "./Global";
-
 import { Routes, Route, Navigate, HashRouter } from "react-router-dom";
 
 import Home from "./pages/Home";

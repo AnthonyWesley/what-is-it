@@ -53,12 +53,12 @@ export default function useUserControl(
   const handleFinalStatus = () => {
     const newUser = [...users];
     if (isWinner) {
-      newUser[0].totalScore = (newUser[0].totalScore ?? 0) + 1;
+      newUser[0].victories = (newUser[0].victories ?? 0) + 1;
       setUsers(newUser);
       setLocalStorage(newUser);
     }
     if (isLoser) {
-      newUser[0].totalScore = (newUser[0].totalScore ?? 0) + 1;
+      newUser[0].defeats = (newUser[0].defeats ?? 0) + 1;
       setUsers(newUser);
       setLocalStorage(newUser);
     }
