@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { px2vw } from "../../Global";
 
 type ContainerProps = {
-  isopen: boolean;
+  isopen: boolean | undefined;
 };
 export const Container = styled.div<ContainerProps>`
   position: fixed;

@@ -10,8 +10,8 @@ import ScoreArea from "../../components/ScoreArea";
 import KeyboardArea from "../../components/KeyboardArea";
 import Modal from "../../components/Modal";
 
-import { Trophy, MaskSad, SignOut } from "phosphor-react";
-import { Link } from "react-router-dom";
+import { Trophy, MaskSad } from "phosphor-react";
+
 import FooterArea from "../../components/FooterArea";
 
 const finalStatus = {

@@ -13,7 +13,10 @@ const slide = keyframes`
   }
 `;
 
-export const px2vw = (size, width = 1440) => `${(size / width) * 100}vw`;
+type Px2vwFunction = (size: number, width?: number) => string;
+
+export const px2vw: Px2vwFunction = (size, width = 1440) =>
+  `${(size / width) * 100}vw`;
 
 export const Global = createGlobalStyle`
   * {

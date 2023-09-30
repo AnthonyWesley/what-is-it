@@ -38,12 +38,12 @@ export default function KeyboardArea() {
           btnText="A/z"
           title="Ajuda!"
           icon={<WarningCircle weight="duotone" />}
-          text="Deseja pagar 20 de seus pontos para revelar 1 letra aleatoria"
+          text="Deseja pagar 20 de seus pontos para revelar 1 letra aleatória"
           buttonActionText="Sim"
           buttonCancelText="Não"
           funcActions={{
             funcOne: app.handlePayToUseTips,
-            funcTwo: app.handleTipsButtonClick,
+            funcTwo: () => app.handleTipsButtonClick, // Envolver a função aqui
           }}
           isDisabled={twice && true}
         />
