@@ -43,7 +43,7 @@ export default function KeyboardArea() {
           buttonCancelText="Não"
           funcActions={{
             funcOne: app.handlePayToUseTips,
-            funcTwo: () => app.handleTipsButtonClick, // Envolver a função aqui
+            funcTwo: app.handleTipsButtonClick,
           }}
           isDisabled={twice && true}
         />

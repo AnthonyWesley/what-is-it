@@ -28,7 +28,7 @@ export type Game = {
   handleStartGameButton: () => void;
 
   handleMouseClick: MouseEventHandler;
-  handleTipsButtonClick: MouseEventHandler;
+  handleTipsButtonClick: () => void;
   handleScore: () => void;
   handleLoserScore: () => void;
   handlePayToUseTips: () => void;

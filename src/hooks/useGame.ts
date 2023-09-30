@@ -39,7 +39,7 @@ export default function useGame() {
     return unsolvedLetters;
   };
 
-  const handleTipsButtonClick: MouseEventHandler = () => {
+  const handleTipsButtonClick = () => {
     setCount((prev) => prev + 1);
     const unsolvedLetters = generateUnsolvedLettersList();
     if (unsolvedLetters.length > 0 && count < 2) {
