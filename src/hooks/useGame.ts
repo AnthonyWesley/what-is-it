@@ -7,10 +7,12 @@ export default function useGame() {
     const number = Math.floor(Math.random() * words.length);
     setDescription(words[number].tips);
 
-    return words[number].word.toUpperCase().trim();
+    // return words[number].word.toUpperCase().trim();
+    return "PROVÁVELA";
   };
 
   const secretWord = useState<string>(() => generateSecretWord())[0];
+
   const [count, setCount] = useState<number>(0);
   const [letter, setLetter] = useState<string>("");
   const [correctLetters, setCorrectLetters] = useState<string[]>([]);
@@ -61,29 +63,33 @@ export default function useGame() {
   };
 
   const isCorrectLetters = () => {
-    const newList = [...correctLetters];
-    const secretWordArray = [...secretWord];
+    const newCorrectLetters = [...correctLetters];
+    const newSecretWord = [...secretWord];
 
-    for (const [index, char] of secretWordArray.entries()) {
+    for (const [index, char] of newSecretWord.entries()) {
       const normalizeChar = char
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "");
 
       if (normalizeChar === letter) {
-        newList[index] = char;
-        setCorrectLetters(newList);
+        newCorrectLetters[index] = char;
+        setCorrectLetters(newCorrectLetters);
       }
 
       if (correctLetters[index] == undefined) {
-        newList[index] = "";
-        setCorrectLetters(newList);
+        newCorrectLetters[index] = "";
+        setCorrectLetters(newCorrectLetters);
       }
     }
   };
 
   const isWrongLetters = () => {
-    const includes = !secretWord.includes(letter);
-    const breaksSameLetters = !wrongLetters.includes(letter);
+    const normalize = secretWord
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
+
+    const includes = !normalize.includes(letter);
+    const breaksSameLetters = !correctLetters.includes(letter);
 
     if (includes && breaksSameLetters) {
       const newList = [...wrongLetters];

@@ -9,11 +9,15 @@ import { WarningCircle } from "phosphor-react";
 export default function KeyboardArea() {
   const { app, theme } = useContext(AppContext);
   const twice = app.count == 2 && "null";
+  const normalize = app.correctLetters
+    .join()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
 
   return (
     <Container>
       {keyboard.map((item, index) => {
-        const isCorrectWord = app.correctLetters.includes(item);
+        const isCorrectWord = normalize.includes(item);
         const isWrongWord = app.wrongLetters.includes(item);
 
         return (
