@@ -1,6 +1,5 @@
 import { MouseEventHandler, useEffect, useState } from "react";
 import { words } from "../constants/WordsToGame";
-import { useLocation } from "react-router-dom";
 
 export default function useGame() {
   const [description, setDescription] = useState<string[]>([]);
@@ -93,14 +92,9 @@ export default function useGame() {
     }
   };
 
-  const whoPage = () => {
-    const location = useLocation();
-    if (location.pathname == "/game") {
-      setIsGameOn(true);
-    }
+  const handleIsGameOn = (isOn: boolean) => {
+    setIsGameOn(isOn);
   };
-
-  console.log(location.pathname);
 
   useEffect(() => {
     if (!isWinner && !isLoser) {
@@ -118,7 +112,7 @@ export default function useGame() {
       };
     }
   }, [isGameOn]);
-  console.log(isGameOn);
+
   return {
     secretWord,
     description,
@@ -128,8 +122,7 @@ export default function useGame() {
     isWinner,
     isLoser,
     count,
-
-    whoPage,
+    handleIsGameOn,
     handleMouseClick,
     handleTipsButtonClick,
   };

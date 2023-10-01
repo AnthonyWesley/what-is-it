@@ -9,6 +9,11 @@ import { Trash } from "phosphor-react";
 export default function Home() {
   const { app } = useContext(AppContext);
 
+  const keyboardOn = () => {
+    app.handleStartGameButton();
+    app.handleIsGameOn(true);
+  };
+
   return (
     <S.Box>
       <Container>
@@ -27,12 +32,11 @@ export default function Home() {
           <br></br>
           Mas não se preocupe! Se estiver com dificuldades, você pode revelar
           uma letra aleatória por 20 pontos. Lembre-se de que você só pode usar
-          no máximo duas dicas por jogo, então use-as com sabedoria para obter
-          pistas valiosas que o ajudarão a decifrar a palavra oculta.
+          no máximo duas dicas por jogo.
           <br></br>
           <br></br>
           Divirta-se no desafiante 'What's it?' e mostre suas habilidades de
-          adivinhação. Será que você consegue obter a pontuação máxima?",
+          adivinhação. Será que você consegue obter a pontuação máxima?
         </p>
 
         {(app.users[0]?.player && (
@@ -52,7 +56,7 @@ export default function Home() {
         <Link
           style={{ width: "100%", textDecoration: "none" }}
           to={"/game"}
-          onClick={app.handleStartGameButton}
+          onClick={keyboardOn}
         >
           <HomeButton>Jogar</HomeButton>
         </Link>

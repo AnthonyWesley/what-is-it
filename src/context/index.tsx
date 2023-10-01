@@ -34,6 +34,7 @@ function getDefaultAppData() {
     handleScore: () => {},
     handleLoserScore: () => {},
     handlePayToUseTips: () => {},
+    handleIsGameOn: () => {},
   };
 }
 
@@ -49,7 +50,7 @@ export default function AppProvider({ children }: { children: JSX.Element }) {
     count,
     handleMouseClick,
     handleTipsButtonClick,
-    whoPage,
+    handleIsGameOn,
   } = useGame();
 
   const { score, mistakes, handleScore, handleLoserScore, handlePayToUseTips } =
@@ -84,7 +85,7 @@ export default function AppProvider({ children }: { children: JSX.Element }) {
     handleTextValue,
     handleDeleteUser,
     handleStartGameButton,
-    whoPage,
+    handleIsGameOn,
   };
 
   return (

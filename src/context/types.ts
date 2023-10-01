@@ -32,6 +32,7 @@ export type Game = {
   handleScore: () => void;
   handleLoserScore: () => void;
   handlePayToUseTips: () => void;
+  handleIsGameOn: (isOn: boolean) => void;
 };
 
 type Theme = {
