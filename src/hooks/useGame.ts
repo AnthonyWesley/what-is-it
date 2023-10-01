@@ -94,6 +94,11 @@ export default function useGame() {
 
   const handleIsGameOn = (isOn: boolean) => {
     setIsGameOn(isOn);
+    if (isOn === true) {
+      console.log("Teclado Ativado");
+    } else {
+      console.log("Desativado");
+    }
   };
 
   useEffect(() => {
