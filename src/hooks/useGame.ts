@@ -7,7 +7,8 @@ export default function useGame() {
     const number = Math.floor(Math.random() * words.length);
     setDescription(words[number].tips);
 
-    return words[number].word.toUpperCase().trim();
+    // return words[number].word.toUpperCase().trim();
+    return "NARGUILÉ";
   };
 
   const secretWord = useState<string>(() => generateSecretWord())[0];
