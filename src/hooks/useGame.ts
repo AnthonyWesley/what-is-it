@@ -94,11 +94,6 @@ export default function useGame() {
 
   const handleIsGameOn = (isOn: boolean) => {
     setIsGameOn(isOn);
-    if (isOn === true) {
-      console.log("Teclado Ativado");
-    } else {
-      console.log("Desativado");
-    }
   };
 
   useEffect(() => {
@@ -110,7 +105,7 @@ export default function useGame() {
 
   useEffect(() => {
     console.log(secretWord);
-    while (isGameOn) {
+    if (isGameOn) {
       document.addEventListener("keydown", handleKeyboardPress);
       return () => {
         document.removeEventListener("keydown", handleKeyboardPress);
