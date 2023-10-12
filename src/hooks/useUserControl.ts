@@ -3,6 +3,7 @@ import { UserType } from "../context/types";
 import useLocalStorage from "./useLocalStorage";
 
 export default function useUserControl(
+  secretWord: string,
   isWinner = false,
   isLoser = false,
   score = 0
@@ -15,6 +16,8 @@ export default function useUserControl(
   useEffect(() => {
     handleFinalScore();
     handleFinalStatus();
+    calculatePercentagePointsPerWin();
+    PushWordGuessed();
   }, [isWinner, isLoser]);
 
   useEffect(() => {
@@ -32,9 +35,11 @@ export default function useUserControl(
     if (users.length < 1 && text.length > 2) {
       newUser.push({
         player: text,
-        totalScore: 0,
         victories: 0,
         defeats: 0,
+        totalScore: 0,
+        percentagePointsPerWin: "",
+        wordGuessed: [],
       });
       setUsers(newUser);
       setLocalStorage(newUser);
@@ -71,6 +76,33 @@ export default function useUserControl(
     setLocalStorage(newUser);
     location.reload();
   };
+
+  const calculatePercentagePointsPerWin = () => {
+    if (users.length < 1 || !users[0].victories || !users[0].totalScore) {
+      return; // Não há usuários, vitórias ou totalScore definido, não há nada a calcular.
+    }
+
+    const [firstUser] = users;
+    const { totalScore, victories } = firstUser;
+
+    const percentage = (totalScore ?? 0) / (victories ?? 0);
+
+    firstUser.percentagePointsPerWin = percentage.toFixed(2);
+
+    setUsers([...users]);
+    setLocalStorage([...users]);
+  };
+
+  const PushWordGuessed = () => {
+    if (isWinner) {
+      const [firstUser] = users;
+
+      firstUser.wordGuessed?.push(secretWord);
+      setUsers([...users]);
+      setLocalStorage([...users]);
+    }
+  };
+
   return {
     users,
     text,

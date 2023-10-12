@@ -2,7 +2,7 @@ import * as M from "./style";
 import { useState } from "react";
 
 type ModalProp = {
-  btnText?: string;
+  btnText?: string | JSX.Element;
   title: string;
   icon: JSX.Element;
   text: string;

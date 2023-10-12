@@ -2,9 +2,11 @@ import { ChangeEvent, MouseEventHandler } from "react";
 
 export type UserType = {
   player?: string;
-  totalScore?: number;
-  victories?: number;
-  defeats?: number;
+  totalScore?: number | undefined;
+  victories?: number | undefined;
+  defeats?: number | undefined;
+  percentagePointsPerWin?: string | undefined;
+  wordGuessed: string[];
 };
 
 export type Game = {

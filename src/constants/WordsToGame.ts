@@ -268,14 +268,7 @@ export const words = [
       "Utilizada em joias e objetos de decoração.",
     ],
   },
-  {
-    word: "Torpor",
-    tips: [
-      "Estado de inatividade ou letargia.",
-      "Redução do metabolismo e da atividade física.",
-      "Pode ocorrer em animais durante o inverno ou como resposta a condições adversas.",
-    ],
-  },
+
   {
     word: "Valsa",
     tips: [
@@ -404,22 +397,6 @@ export const words = [
       "Representante diplomático de um país em outra nação ou organização internacional.",
       "Responsável por promover relações e interesses diplomáticos.",
       "Negocia acordos, tratados e questões de interesse mútuo.",
-    ],
-  },
-  {
-    word: "Gerentólogo",
-    tips: [
-      "Profissional especializado no estudo do envelhecimento e dos idosos.",
-      "Atua em áreas como gerontologia social, cuidados de saúde e políticas públicas.",
-      "Desenvolve estratégias para melhorar a qualidade de vida das pessoas idosas.",
-    ],
-  },
-  {
-    word: "Headhunter",
-    tips: [
-      "Profissional especializado em recrutamento e seleção de executivos.",
-      "Busca por talentos e profissionais altamente qualificados.",
-      "Realiza pesquisas e identifica candidatos ideais para posições de destaque.",
     ],
   },
 
@@ -563,14 +540,7 @@ export const words = [
       "É usado em muitos pratos tradicionais da culinária portuguesa e de outros países.",
     ],
   },
-  {
-    word: "Badejo",
-    tips: [
-      "Peixe marinho encontrado em águas tropicais e subtropicais.",
-      "Possui uma carne branca, suculenta e de sabor delicado.",
-      "É valorizado na culinária de frutos do mar e pode ser preparado de várias formas.",
-    ],
-  },
+
   {
     word: "Barracuda",
     tips: [
@@ -579,14 +549,7 @@ export const words = [
       "É um peixe apreciado na pesca esportiva, mas sua carne pode conter níveis elevados de mercúrio.",
     ],
   },
-  {
-    word: "Beluga",
-    tips: [
-      "Espécie de baleia branca encontrada no Ártico e em regiões subárticas.",
-      "Conhecida por sua aparência distintiva e seu tamanho impressionante.",
-      "É um animal amigável e social que emite vocalizações complexas.",
-    ],
-  },
+
   {
     word: "Cágado",
     tips: [
@@ -627,14 +590,7 @@ export const words = [
       "Desempenha um papel importante na decomposição de matéria orgânica e na renovação do solo.",
     ],
   },
-  {
-    word: "Gerbo",
-    tips: [
-      "Pequeno roedor encontrado em regiões áridas e desertos.",
-      "Possui características adaptativas, como grandes orelhas e pés, que ajudam na dissipação de calor.",
-      "É conhecido por sua habilidade de saltar e por ser um animal de estimação popular.",
-    ],
-  },
+
   {
     word: "Gnu",
     tips: [
@@ -691,22 +647,7 @@ export const words = [
       "São encontrados em lagos, rios e áreas úmidas e se alimentam de plantas aquáticas e insetos.",
     ],
   },
-  {
-    word: "Melro",
-    tips: [
-      "Pássaro com plumagem preta e canto melodioso.",
-      "Encontrado em florestas e áreas urbanas.",
-      "Tamanho médio e distintivo.",
-    ],
-  },
-  {
-    word: "Ocapi",
-    tips: [
-      "Mamífero com corpo robusto e pernas listradas.",
-      "Nativo das florestas tropicais da República Democrática do Congo.",
-      "Parente próximo da girafa e aparência exótica.",
-    ],
-  },
+
   {
     word: "Ouriço",
     tips: [
@@ -851,14 +792,7 @@ export const words = [
       "Encontrado em casas, igrejas e ambientes festivos.",
     ],
   },
-  {
-    word: "Daguerreótipo",
-    tips: [
-      "Um dos primeiros métodos de fotografia.",
-      "Utiliza uma placa metálica revestida com produtos químicos.",
-      "Criado pelo inventor Louis Daguerre.",
-    ],
-  },
+
   {
     word: "Dedaleira",
     tips: [
@@ -873,14 +807,6 @@ export const words = [
       "Dispositivo médico usado para restaurar o ritmo cardíaco normal.",
       "Envia um choque elétrico ao coração em casos de parada cardíaca.",
       "Encontrado em hospitais, ambulâncias e locais públicos.",
-    ],
-  },
-  {
-    word: "Diapasão",
-    tips: [
-      "Instrumento de metal usado para ajustar a afinação de instrumentos musicais.",
-      "Emite um tom puro e constante quando vibrado.",
-      "Utilizado por músicos e afinadores.",
     ],
   },
 
@@ -1080,14 +1006,7 @@ export const words = [
       "Popular no Brasil, especialmente no sul do país.",
     ],
   },
-  {
-    word: "Ciriguela",
-    tips: [
-      "Fruta tropical de formato arredondado e cor amarela.",
-      "Possui polpa suculenta e doce.",
-      "Também é conhecida como seriguela.",
-    ],
-  },
+
   {
     word: "Cranberry",
     tips: [
@@ -1180,15 +1099,6 @@ export const words = [
   },
 
   {
-    word: "Puçá",
-    tips: [
-      "Instrumento utilizado para capturar pequenos animais aquáticos.",
-      "Geralmente feito com uma rede de malha fina e cabo longo.",
-      "Usado por pescadores e estudiosos da vida aquática.",
-    ],
-  },
-
-  {
     word: "Anacrônico",
     tips: [
       "Que está fora de seu tempo ou época.",
@@ -1204,14 +1114,7 @@ export const words = [
       "Demonstração de boa vontade e compaixão pelos outros.",
     ],
   },
-  {
-    word: "Circunspecto",
-    tips: [
-      "Característica de alguém cauteloso e atento.",
-      "Que age com prudência e ponderação.",
-      "Observa e analisa antes de tomar uma decisão.",
-    ],
-  },
+
   {
     word: "Denegrir",
     tips: [
@@ -1236,14 +1139,7 @@ export const words = [
       "Barreira que precisa ser superada ou contornada.",
     ],
   },
-  {
-    word: "Escusa",
-    tips: [
-      "Pedido de desculpas ou justificativa por uma falta ou erro.",
-      "Explicação ou motivo que isenta de culpa.",
-      "Forma de se desculpar ou explicar uma ausência ou falha.",
-    ],
-  },
+
   {
     word: "Estratagema",
     tips: [
@@ -1334,14 +1230,6 @@ export const words = [
       "Que fica atônito ou surpreso diante de algo.",
     ],
   },
-  {
-    word: "Quiçá",
-    tips: [
-      "Expressão que indica dúvida ou incerteza.",
-      "Usada para expressar possibilidade ou probabilidade.",
-      "Sinônimo de talvez ou possivelmente.",
-    ],
-  },
 
   {
     word: "Taciturno",
@@ -1373,14 +1261,6 @@ export const words = [
       "Aversão, medo ou ódio a pessoas estrangeiras.",
       "Preconceito e discriminação contra indivíduos de outras nacionalidades.",
       "Atitudes hostis e intolerantes em relação a estrangeiros.",
-    ],
-  },
-  {
-    word: "Zênite",
-    tips: [
-      "Ponto mais alto ou culminante.",
-      "Ponto em que algo atinge o auge ou a máxima intensidade.",
-      "O ponto mais alto do céu em relação a um observador.",
     ],
   },
 
@@ -1522,14 +1402,7 @@ export const words = [
       "Mestiço ou produto de cruzamento entre espécies ou raças.",
     ],
   },
-  {
-    word: "Ignóbil",
-    tips: [
-      "Que é desprezível, vil ou indigno.",
-      "Caracterizado por ações ou comportamentos abjetos.",
-      "Que não possui nobreza de caráter.",
-    ],
-  },
+
   {
     word: "Impetuoso",
     tips: [
@@ -1538,14 +1411,7 @@ export const words = [
       "Que demonstra intensidade ou fervor.",
     ],
   },
-  {
-    word: "Inócuo",
-    tips: [
-      "Que não causa danos, prejuízos ou efeitos negativos.",
-      "Que é inofensivo ou seguro.",
-      "Que não apresenta riscos ou perigos.",
-    ],
-  },
+
   {
     word: "Jubiloso",
     tips: [
@@ -2136,30 +2002,6 @@ export const words = [
     ],
   },
   {
-    word: "Taciturno",
-    tips: [
-      "Que é silencioso, reservado ou introvertido.",
-      "Que tem o hábito de falar pouco ou evitar conversas.",
-      "Que demonstra tristeza ou melancolia.",
-    ],
-  },
-  {
-    word: "Tácito",
-    tips: [
-      "Que é implícito, subentendido ou não expresso de forma direta.",
-      "Que é compreendido ou entendido sem a necessidade de palavras.",
-      "Que está subentendido ou sob entendimento mútuo.",
-    ],
-  },
-  {
-    word: "Tergiversar",
-    tips: [
-      "Mudar de assunto, evitar ou desviar-se de uma questão.",
-      "Falar de forma ambígua ou evasiva.",
-      "Dar respostas vagas ou pouco claras.",
-    ],
-  },
-  {
     word: "Ufano",
     tips: [
       "Que está orgulhoso, satisfeito ou vaidoso.",
@@ -2191,14 +2033,7 @@ export const words = [
       "O ponto mais alto no céu em relação a um observador.",
     ],
   },
-  {
-    word: "Írrito",
-    tips: [
-      "Que é inválido, nulo ou sem valor legal.",
-      "Que não produz efeito ou resultado.",
-      "Que é considerado sem fundamento ou ineficaz.",
-    ],
-  },
+
   {
     word: "Justapor",
     tips: [
@@ -2255,14 +2090,7 @@ export const words = [
       "Deixar de perceber ou ignorar outras coisas por causa de uma obsessão.",
     ],
   },
-  {
-    word: "Obnóxio",
-    tips: [
-      "Que é irritante, insuportável ou desagradável.",
-      "Que causa aversão, repulsa ou incômodo.",
-      "Que é ofensivo ou detestável.",
-    ],
-  },
+
   {
     word: "Ociosidade",
     tips: [
@@ -2271,14 +2099,7 @@ export const words = [
       "Ausência de esforço ou movimento.",
     ],
   },
-  {
-    word: "Opulência",
-    tips: [
-      "Grande riqueza, abundância ou luxo.",
-      "Excesso de bens materiais ou recursos financeiros.",
-      "Vida ou estilo de vida caracterizado por ostentação ou suntuosidade.",
-    ],
-  },
+
   {
     word: "Paradigma",
     tips: [
@@ -2287,14 +2108,7 @@ export const words = [
       "Representação de um conjunto de ideias, valores ou crenças.",
     ],
   },
-  {
-    word: "Perquirir",
-    tips: [
-      "Investigar, pesquisar ou examinar minuciosamente.",
-      "Procurar informações, evidências ou respostas.",
-      "Realizar uma busca detalhada ou inquirição.",
-    ],
-  },
+
   {
     word: "Pletórico",
     tips: [
@@ -2343,14 +2157,7 @@ export const words = [
       "Comportamento cuidadoso, previdente ou ponderado.",
     ],
   },
-  {
-    word: "Pungente",
-    tips: [
-      "Que causa uma sensação intensa ou penetrante.",
-      "Que provoca uma forte emoção ou reação.",
-      "Que é marcante, vívido ou impactante.",
-    ],
-  },
+
   {
     word: "Rancoroso",
     tips: [
@@ -2359,14 +2166,7 @@ export const words = [
       "Que age movido por sentimentos de raiva ou ódio.",
     ],
   },
-  {
-    word: "Recôndito",
-    tips: [
-      "Que está escondido, afastado ou inacessível.",
-      "Que é de difícil acesso ou pouco conhecido.",
-      "Que está situado em um local remoto ou distante.",
-    ],
-  },
+
   {
     word: "Refutar",
     tips: [
@@ -2440,31 +2240,7 @@ export const words = [
       "Produzir um ruído característico ao pronunciar certas palavras.",
     ],
   },
-  {
-    word: "Sibilino",
-    tips: [
-      "Que é enigmático, misterioso ou de significado ambíguo.",
-      "Que é difícil de compreender ou interpretar.",
-      "Que é astuto, dissimulado ou secreto.",
-    ],
-  },
 
-  {
-    word: "Tolhido",
-    tips: [
-      "Que é impedido, limitado ou cerceado.",
-      "Que sofre restrições ou obstáculos.",
-      "Que é privado de liberdade ou ação plena.",
-    ],
-  },
-  {
-    word: "Tórrido",
-    tips: [
-      "Que é muito quente, ardente ou escaldante.",
-      "Que é intenso, fervoroso ou apaixonado.",
-      "Que é marcado por altas temperaturas ou clima extremamente quente.",
-    ],
-  },
   {
     word: "Transcender",
     tips: [

@@ -62,7 +62,7 @@ export default function AppProvider({ children }: { children: JSX.Element }) {
     handleTextValue,
     handleDeleteUser,
     handleStartGameButton,
-  } = useUserControl(isWinner, isLoser, score);
+  } = useUserControl(secretWord, isWinner, isLoser, score);
 
   const appData = {
     secretWord,
