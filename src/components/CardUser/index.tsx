@@ -33,6 +33,11 @@ export default function CardUser() {
     app.handleIsGameOn(true);
   };
 
+  const mediaColor =
+    (Number(user.percentagePointsPerWin) > 79 && "green") ||
+    (Number(user.percentagePointsPerWin) > 50 && "orange") ||
+    "red";
+
   return (
     <Container>
       <h1>
@@ -64,6 +69,11 @@ export default function CardUser() {
             {user.totalScore} <Coins weight="duotone" />
           </h1>
         </div>
+        <div title="Pontos por partida">
+          <p>MÉDIA DE PONTOS POR PARTIDA</p>
+          <h2 style={{ color: mediaColor }}>{user.percentagePointsPerWin}</h2>
+        </div>
+
         <StatsAction>
           <p onClick={app.handleDeleteUser}>
             <Trash />

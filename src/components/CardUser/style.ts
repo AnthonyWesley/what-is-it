@@ -59,6 +59,11 @@ export const ScoreContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 10px;
+
+  h1 {
+    font-size: 1.2rem;
+  }
 `;
 export const StatsAction = styled.div`
   width: 100%;
