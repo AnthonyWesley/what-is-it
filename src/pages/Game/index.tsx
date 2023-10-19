@@ -51,8 +51,8 @@ export default function Game() {
       {modalData && (
         <Modal
           activeModal={true}
-          title={modalData.title}
-          text={modalData.message}
+          headerTitle={modalData.title}
+          description={modalData.message}
           icon={modalData.icon}
           buttonActionText="Jogar Novamente!"
           funcActions={{ funcOne: () => location.reload() }}

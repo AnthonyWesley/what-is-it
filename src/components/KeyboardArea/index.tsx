@@ -39,17 +39,17 @@ export default function KeyboardArea() {
       })}
       <TipsButton title="Letra aleatória" active={twice || ""}>
         <Modal
-          btnText="A/z"
-          title="Ajuda!"
+          modalName="A/z"
+          headerTitle="Ajuda!"
           icon={<WarningCircle weight="duotone" />}
-          text="Deseja pagar 20 de seus pontos para revelar 1 letra aleatória"
+          description="Deseja pagar 20 de seus pontos para revelar 1 letra aleatória ?"
           buttonActionText="Sim"
           buttonCancelText="Não"
           funcActions={{
             funcOne: app.handlePayToUseTips,
             funcTwo: app.handleTipsButtonClick,
           }}
-          isDisabled={twice && true}
+          disableButton={twice && true}
         />
       </TipsButton>
     </Container>

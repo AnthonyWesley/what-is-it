@@ -38,7 +38,9 @@ export default function useUserControl(
         victories: 0,
         defeats: 0,
         totalScore: 0,
-        percentagePointsPerWin: "",
+        percentagePointsPerWin: 0,
+        percentageWinsPerMatch: 0,
+        playerLevel: 0,
         wordGuessed: [],
       });
       setUsers(newUser);
@@ -82,12 +84,18 @@ export default function useUserControl(
       return; // Não há usuários, vitórias ou totalScore definido, não há nada a calcular.
     }
 
-    const [firstUser] = users;
-    const { totalScore, victories } = firstUser;
+    const [newUser] = users;
+    const { totalScore = 0, victories = 0, defeats = 0 } = newUser;
 
-    const percentage = (totalScore ?? 0) / (victories ?? 0);
+    const pointsPerWin = totalScore / victories;
+    const totalMacth = victories + defeats;
+    const winsPerMatch = (victories / totalMacth) * 100;
 
-    firstUser.percentagePointsPerWin = percentage.toFixed(2);
+    const level = (pointsPerWin + winsPerMatch) / 2;
+
+    newUser.percentagePointsPerWin = Math.floor(pointsPerWin);
+    newUser.percentageWinsPerMatch = Math.floor(winsPerMatch);
+    newUser.playerLevel = Math.floor(level);
 
     setUsers([...users]);
     setLocalStorage([...users]);

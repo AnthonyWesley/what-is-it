@@ -1,5 +1,5 @@
 import * as S from "../../Global";
-import { Container } from "../../components/GameInfoDisplay/style";
+
 import { AppContext } from "../../context";
 import { useContext } from "react";
 
@@ -10,10 +10,13 @@ export default function Home() {
   const { app } = useContext(AppContext);
 
   return (
-    <S.Box>
-      <Container>
-        {(app.users[0] && <CardUser />) || <GameInfoDisplay />}
-      </Container>
+    <S.Box
+      style={{
+        display: "flex",
+        alignItems: "center",
+      }}
+    >
+      {(app.users[0] && <CardUser />) || <GameInfoDisplay />}
     </S.Box>
   );
 }

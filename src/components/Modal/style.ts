@@ -10,23 +10,31 @@ export const Container = styled.div<ContainerProps>`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
   display: ${(props) => (props.isopen ? "flex" : "none")};
+
   justify-content: center;
   align-items: center;
   color: white;
-  /* opacity: ${(props) => (props.isopen ? "1" : "0")};
-  transition: opacity 5s ease-in-out; */
 `;
 
-export const Btn = styled.button`
+type BtnProps = {
+  isDisabled: boolean;
+};
+
+export const Btn = styled.div<BtnProps>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: transparent;
+  opacity: ${(prop) => prop.isDisabled && "0.6"};
+  pointer-events: ${(prop) => prop.isDisabled && "none"};
   width: 100%;
   height: 100%;
   border: none;
   &:hover {
-    cursor: pointer;
     background-color: rgba(0, 0, 0, 5%);
+    cursor: pointer;
     color: white;
   }
 `;
@@ -43,12 +51,6 @@ export const Content = styled.div`
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
   margin-bottom: ${px2vw(1000)};
 
-  /* @media (min-width: 768px) {
-    padding: ${px2vw(20)};
-    width: ${px2vw(180)};
-    margin-bottom: ${px2vw(250)};
-  } */
-
   @media (min-width: 1024px) {
     padding: ${px2vw(15)};
     width: ${px2vw(380)};
@@ -56,26 +58,27 @@ export const Content = styled.div`
   }
 `;
 
-export const Header = styled.div`
+export const Header = styled.header`
   display: flex;
   color: orange;
   justify-content: space-between;
+
+  div {
+    font-size: 2rem;
+  }
 `;
 
 export const Area = styled.div`
-  font-size: ${px2vw(70)};
+  p {
+    font-size: ${px2vw(70)};
 
-  /* @media (min-width: 768px) {
-    font-size: ${px2vw(20)};
-  } */
-
-  @media (min-width: 1024px) {
-    font-size: ${px2vw(16)};
+    @media (min-width: 1024px) {
+      font-size: ${px2vw(20)};
+    }
   }
-  /* font-style: italic; */
 `;
 
-export const Footer = styled.div`
+export const Footer = styled.footer`
   display: flex;
   justify-content: end;
   gap: ${px2vw(5)};
@@ -85,18 +88,13 @@ export const Button = styled.button`
   padding: ${px2vw(40)} ${px2vw(60)};
   align-items: flex-end;
 
-  /* @media (min-width: 768px) {
-    padding: ${px2vw(20)} ${px2vw(40)};
-  } */
-
   @media (min-width: 1024px) {
     padding: ${px2vw(10)} ${px2vw(20)};
-    /* width: ${px2vw(50)};
-    height: ${px2vw(30)}; */
   }
 
   &:hover {
     background-color: orange;
     color: white;
+    cursor: pointer;
   }
 `;

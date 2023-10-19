@@ -1,26 +1,41 @@
 import styled from "styled-components";
+import { px2vw } from "../../Global";
 
 export const Container = styled.div`
   color: white;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 65%);
+  background-color: rgba(0, 0, 0, 85%);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
+  margin: 0 ${px2vw(10)};
+  padding: ${px2vw(30)};
+  font-size: ${px2vw(80)};
 
-  /* h1 {
+  width: ${px2vw(320, 320)};
+
+  @media (min-width: 1024px) {
+    width: ${px2vw(680)};
+    font-size: ${px2vw(23)};
+  }
+
+  h1 {
+    background-color: #e25b00;
+    width: 100%;
     display: flex;
-    flex-direction: column;
-  } */
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 0 10px;
+  }
 `;
 
 export const StatsContainer = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 100px;
+  /* height: 100px; */
 
   span:nth-child(1) {
     align-self: flex-start;
@@ -29,7 +44,7 @@ export const StatsContainer = styled.div`
     align-items: center;
     gap: 10px;
 
-    h1 {
+    h2 {
       padding: 0 10px;
     }
   }
@@ -38,9 +53,10 @@ export const StatsContainer = styled.div`
     align-self: center;
     display: flex;
     justify-content: center;
-    width: 5px;
+    width: 2px;
     height: 100px;
     rotate: 35deg;
+    border: 1px solid white;
   }
 
   span:nth-child(3) {
@@ -49,7 +65,7 @@ export const StatsContainer = styled.div`
     justify-content: center;
     align-items: center;
     gap: 10px;
-    h1 {
+    h2 {
       padding: 0 10px;
     }
   }
@@ -59,10 +75,14 @@ export const ScoreContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
 
-  h1 {
-    font-size: 1.2rem;
+  div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e25b00;
   }
 `;
 export const StatsAction = styled.div`
@@ -70,10 +90,16 @@ export const StatsAction = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: white;
   font-size: 2rem;
 
+  span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   :hover {
-    color: #e25b00;
     cursor: pointer;
   }
 `;

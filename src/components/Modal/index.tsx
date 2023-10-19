@@ -2,13 +2,13 @@ import * as M from "./style";
 import { useState } from "react";
 
 type ModalProp = {
-  btnText?: string | JSX.Element;
-  title: string;
+  modalName?: string | JSX.Element;
+  headerTitle: string;
   icon: JSX.Element;
-  text: string;
+  description: string;
   buttonActionText?: string;
   buttonCancelText?: string;
-  isDisabled?: boolean;
+  disableButton?: boolean;
   activeModal?: boolean;
   funcActions?: {
     funcOne?: () => void;
@@ -17,13 +17,13 @@ type ModalProp = {
   };
 };
 export default function Modal({
-  btnText,
-  title,
+  modalName,
+  headerTitle,
   icon,
-  text,
+  description,
   buttonActionText,
   buttonCancelText,
-  isDisabled,
+  disableButton = false,
   activeModal,
   funcActions = {},
 }: ModalProp) {
@@ -55,17 +55,19 @@ export default function Modal({
 
   return (
     <>
-      <M.Btn onClick={showModal} disabled={isDisabled}>
-        {btnText}
+      <M.Btn onClick={showModal} isDisabled={disableButton}>
+        {modalName}
       </M.Btn>
 
       <M.Container isopen={open || activeModal}>
         <M.Content>
           <M.Header>
-            <h1>{title}</h1>
-            <h1>{icon}</h1>
+            <div>{headerTitle}</div>
+            <div>{icon}</div>
           </M.Header>
-          <M.Area>{text}</M.Area>
+          <M.Area>
+            <p>{description}</p>
+          </M.Area>
           {(buttonActionText || buttonCancelText) && (
             <M.Footer>
               {buttonCancelText && (

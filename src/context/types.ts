@@ -5,7 +5,9 @@ export type UserType = {
   totalScore?: number | undefined;
   victories?: number | undefined;
   defeats?: number | undefined;
-  percentagePointsPerWin?: string | undefined;
+  percentagePointsPerWin?: number | undefined;
+  percentageWinsPerMatch?: number | undefined;
+  playerLevel?: number | undefined;
   wordGuessed: string[];
 };
 
