@@ -8,11 +8,12 @@ export default function ScoreArea() {
   return (
     <Container>
       <p title="Chances">
-        <Heartbeat size={35} color="#0d0d0d" weight="duotone" /> {app.mistakes}
+        <Heartbeat weight="duotone" /> {app.mistakes}
       </p>
+
       <p>
         {app.score}
-        <Coin size={35} color="#050505" weight="duotone" />
+        <Coin weight="duotone" />
       </p>
     </Container>
   );

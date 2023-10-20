@@ -45,15 +45,6 @@ export default function CardUser() {
     (Number(user.playerLevel) > 79 && "SÁBIO") ||
     (Number(user.playerLevel) > 50 && "INTERMEDIÁRIO") ||
     "INICIANTE";
-  // const colorWinsPerMatch =
-  //   user.percentageWinsPerMatch > 79 && "green" ||
-  //   user.percentageWinsPerMatch > 50 && "orange" ||
-  //   "red";
-
-  // const colorPerLevel =
-  //   user.playerLevel > 79 && "green" ||
-  //   user.playerLevel > 50 && "orange" ||
-  //   "red";
 
   return (
     <Container>

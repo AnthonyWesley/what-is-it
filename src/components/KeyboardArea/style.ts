@@ -37,9 +37,9 @@ export const KeyButton = styled.button<KeyButtonProps>`
 
 export const TipsButton = styled.div<KeyButtonProps>`
   width: 100%;
-  border: 1px solid #e25b00;
-  background-color: orange;
-  color: ${(props) => (props.mark ? "white" : theme.fnColor.primary)};
+  border: 1px solid black;
+  background-color: #e25b00;
+  color: ${(props) => (props.mark ? "white" : "gold")};
 
   opacity: ${(props) => (!props.active ? "null" : "0.3")};
 `;
