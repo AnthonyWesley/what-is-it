@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useCallback, useEffect, useState } from "react";
 import { UserType } from "../context/types";
 import useLocalStorage from "./useLocalStorage";
 
@@ -25,12 +25,15 @@ export default function useUserControl(
     setUsers(newList);
   }, []);
 
-  const handleTextValue = (event: ChangeEvent<HTMLInputElement>) => {
-    const textValue = event.target.value;
-    setText(textValue);
-  };
+  const handleTextValue = useCallback(
+    (event: ChangeEvent<HTMLInputElement>) => {
+      const textValue = event.target.value;
+      setText(textValue);
+    },
+    [setText]
+  );
 
-  const handleStartGameButton = () => {
+  const handleStartGameButton = useCallback(() => {
     const newUser = [...users];
     if (users.length < 1 && text.length > 2) {
       newUser.push({
@@ -46,7 +49,7 @@ export default function useUserControl(
       setUsers(newUser);
       setLocalStorage(newUser);
     }
-  };
+  }, [users, text, setUsers, setLocalStorage]);
 
   const handleFinalScore = () => {
     const newUser = [...users];
@@ -88,8 +91,8 @@ export default function useUserControl(
     const { totalScore = 0, victories = 0, defeats = 0 } = newUser;
 
     const pointsPerWin = totalScore / victories;
-    const totalMacth = victories + defeats;
-    const winsPerMatch = (victories / totalMacth) * 100;
+    const totalMatch = victories + defeats;
+    const winsPerMatch = (victories / totalMatch) * 100;
 
     const level = (pointsPerWin + winsPerMatch) / 2;
 
@@ -101,7 +104,7 @@ export default function useUserControl(
     setLocalStorage([...users]);
   };
 
-  const PushWordGuessed = () => {
+  const PushWordGuessed = useCallback(() => {
     if (isWinner) {
       const [firstUser] = users;
 
@@ -109,7 +112,7 @@ export default function useUserControl(
       setUsers([...users]);
       setLocalStorage([...users]);
     }
-  };
+  }, [isWinner, secretWord, users, setUsers, setLocalStorage]);
 
   return {
     users,

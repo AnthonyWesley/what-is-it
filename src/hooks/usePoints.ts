@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export default function usePoints(wrongLetters: string[]) {
   const [score, setScore] = useState(100);
@@ -9,21 +9,21 @@ export default function usePoints(wrongLetters: string[]) {
     handleMistake();
   }, [wrongLetters]);
 
-  const handleScore = () => {
+  const handleScore = useCallback(() => {
     if (wrongLetters.length) setScore(score - 10);
-  };
+  }, [score, wrongLetters, setScore]);
 
-  const handleLoserScore = () => {
+  const handleLoserScore = useCallback(() => {
     if (wrongLetters.length === 6) setScore(0);
-  };
+  }, [wrongLetters, setScore]);
 
-  const handleMistake = () => {
+  const handleMistake = useCallback(() => {
     if (wrongLetters.length) setMistakes(mistakes - 1);
-  };
+  }, [mistakes, wrongLetters, setMistakes]);
 
-  const handlePayToUseTips = () => {
+  const handlePayToUseTips = useCallback(() => {
     setScore(score - 20);
-  };
+  }, [score, setScore]);
 
   return {
     score,

@@ -1,4 +1,4 @@
-import { MouseEventHandler, useEffect, useState } from "react";
+import { MouseEventHandler, useCallback, useEffect, useState } from "react";
 import { words } from "../constants/WordsToGame";
 
 export default function useGame() {
@@ -24,12 +24,15 @@ export default function useGame() {
 
   const isLoser = wrongLetters.length == 6;
 
-  const handleMouseClick: MouseEventHandler = (e) => {
-    const keyValue = (e.target as HTMLInputElement).innerText;
-    setLetter(keyValue);
-  };
+  const handleMouseClick: MouseEventHandler = useCallback(
+    (e) => {
+      const keyValue = (e.target as HTMLInputElement).innerText;
+      setLetter(keyValue);
+    },
+    [setLetter]
+  );
 
-  const generateUnsolvedLettersList = () => {
+  const generateUnsolvedLettersList = useCallback(() => {
     const unsolvedLetters = secretWord
       .split("")
       .filter(
@@ -37,9 +40,9 @@ export default function useGame() {
           !correctLetters.includes(letter) && !wrongLetters.includes(letter)
       );
     return unsolvedLetters;
-  };
+  }, [secretWord, correctLetters, wrongLetters]);
 
-  const handleTipsButtonClick = () => {
+  const handleTipsButtonClick = useCallback(() => {
     setCount((prev) => prev + 1);
     const unsolvedLetters = generateUnsolvedLettersList();
     if (unsolvedLetters.length > 0 && count < 2) {
@@ -47,14 +50,14 @@ export default function useGame() {
       const randomLetter = unsolvedLetters[randomIndex];
       setLetter(randomLetter);
     }
-  };
+  }, [count, generateUnsolvedLettersList]);
 
-  const handleKeyboardPress = (e: KeyboardEvent) => {
+  const handleKeyboardPress = useCallback((e: KeyboardEvent) => {
     if (isPressedLetter(e.keyCode)) {
       let keyPress = e.key.toUpperCase();
       setLetter(keyPress);
     }
-  };
+  }, []);
 
   const isPressedLetter = (press: number) => {
     if (press >= 65 && press <= 90) return true;
