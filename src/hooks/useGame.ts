@@ -121,6 +121,8 @@ export default function useGame() {
     }
   }, [isGameOn]);
 
+  console.log(isGameOn);
+
   return {
     secretWord,
     description,

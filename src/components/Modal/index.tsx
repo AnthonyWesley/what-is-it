@@ -55,7 +55,7 @@ export default function Modal({
 
   return (
     <>
-      <M.Btn onClick={showModal} isDisabled={disableButton}>
+      <M.Btn onClick={showModal} isdisabled={disableButton ? true : false}>
         {modalName}
       </M.Btn>
 

@@ -1,4 +1,4 @@
-import { ChangeEvent, MouseEventHandler } from "react";
+import { MouseEventHandler } from "react";
 
 export type UserType = {
   player?: string;
@@ -25,9 +25,8 @@ export type Game = {
   mistakes: number;
 
   users: UserType[];
-  text: string;
+  textRef: React.LegacyRef<HTMLInputElement> | null;
 
-  handleTextValue: (event: ChangeEvent<HTMLInputElement>) => void;
   handleDeleteUser: () => void;
   handleStartGameButton: () => void;
 

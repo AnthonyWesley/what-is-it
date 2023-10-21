@@ -19,7 +19,7 @@ export const Container = styled.div<ContainerProps>`
 `;
 
 type BtnProps = {
-  isDisabled: boolean;
+  isdisabled: true | false;
 };
 
 export const Btn = styled.div<BtnProps>`
@@ -27,8 +27,8 @@ export const Btn = styled.div<BtnProps>`
   justify-content: center;
   align-items: center;
   background-color: transparent;
-  opacity: ${(prop) => prop.isDisabled && "0.6"};
-  pointer-events: ${(prop) => prop.isDisabled && "none"};
+  opacity: ${(prop) => prop.isdisabled && "0.6"};
+  pointer-events: ${(prop) => prop.isdisabled && "none"};
   width: 100%;
   height: 100%;
   border: none;

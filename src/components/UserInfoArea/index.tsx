@@ -2,9 +2,13 @@ import { AppContext } from "../../context";
 import { useContext } from "react";
 import { Container } from "./style";
 import { User, Coins, Trophy, MaskSad } from "phosphor-react";
+import { useLocation } from "react-router-dom";
 
 export default function UserInfoArea({ children }: { children?: JSX.Element }) {
   const { app } = useContext(AppContext);
+  const location = useLocation();
+
+  if (location.pathname === "/game") app.handleIsGameOn(true);
 
   return (
     <Container>

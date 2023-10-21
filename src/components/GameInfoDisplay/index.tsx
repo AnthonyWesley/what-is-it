@@ -5,10 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function GameInfoDisplay() {
   const { app } = useContext(AppContext);
-  const keyboardOn = () => {
-    app.handleStartGameButton();
-    app.handleIsGameOn(true);
-  };
+
   return (
     <Container>
       <h1>What's it?</h1>
@@ -36,13 +33,14 @@ export default function GameInfoDisplay() {
       <HomeInput
         type="text"
         placeholder="Nome... *Deve ter acima de 2 caracteres*."
-        onChange={app.handleTextValue}
+        autoFocus
+        ref={app.textRef}
       />
 
       <Link
         style={{ width: "100%", textDecoration: "none" }}
         to={"/game"}
-        onClick={keyboardOn}
+        onClick={app.handleStartGameButton}
       >
         <HomeButton>Jogar</HomeButton>
       </Link>

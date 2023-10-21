@@ -1,4 +1,4 @@
-import { ChangeEvent, useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { UserType } from "../context/types";
 import useLocalStorage from "./useLocalStorage";
 
@@ -8,8 +8,8 @@ export default function useUserControl(
   isLoser = false,
   score = 0
 ) {
-  const [text, setText] = useState("");
   const [users, setUsers] = useState<UserType[]>([]);
+  const textRef = useRef<HTMLInputElement>(null);
 
   const { getLocalStorage, setLocalStorage } = useLocalStorage();
 
@@ -25,19 +25,11 @@ export default function useUserControl(
     setUsers(newList);
   }, []);
 
-  const handleTextValue = useCallback(
-    (event: ChangeEvent<HTMLInputElement>) => {
-      const textValue = event.target.value;
-      setText(textValue);
-    },
-    [setText]
-  );
-
-  const handleStartGameButton = useCallback(() => {
+  const handleStartGameButton = () => {
     const newUser = [...users];
-    if (users.length < 1 && text.length > 2) {
+    if (textRef.current && textRef.current.value.length > 2) {
       newUser.push({
-        player: text,
+        player: textRef.current.value,
         victories: 0,
         defeats: 0,
         totalScore: 0,
@@ -49,7 +41,7 @@ export default function useUserControl(
       setUsers(newUser);
       setLocalStorage(newUser);
     }
-  }, [users, text, setUsers, setLocalStorage]);
+  };
 
   const handleFinalScore = () => {
     const newUser = [...users];
@@ -116,8 +108,8 @@ export default function useUserControl(
 
   return {
     users,
-    text,
-    handleTextValue,
+    textRef,
+
     handleStartGameButton,
     handleDeleteUser,
   };

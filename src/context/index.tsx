@@ -23,9 +23,9 @@ function getDefaultAppData() {
     score: 100,
     mistakes: 6,
     users: [],
-    text: "",
 
-    handleTextValue: () => {},
+    textRef: null,
+
     handleDeleteUser: () => {},
     handleStartGameButton: () => {},
 
@@ -58,8 +58,8 @@ export default function AppProvider({ children }: { children: JSX.Element }) {
 
   const {
     users,
-    text,
-    handleTextValue,
+    textRef,
+
     handleDeleteUser,
     handleStartGameButton,
   } = useUserControl(secretWord, isWinner, isLoser, score);
@@ -75,14 +75,14 @@ export default function AppProvider({ children }: { children: JSX.Element }) {
     count,
     score,
     mistakes,
-    text,
+    textRef,
     users,
     handleMouseClick,
     handleTipsButtonClick,
     handleScore,
     handleLoserScore,
     handlePayToUseTips,
-    handleTextValue,
+
     handleDeleteUser,
     handleStartGameButton,
     handleIsGameOn,

@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import {
   ArrowFatLineRight,
-  Coins,
   MaskSad,
   Trash,
   Trophy,
@@ -14,23 +13,21 @@ import {
   StatsAction,
 } from "./style";
 import { AppContext } from "../../context";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Modal from "../Modal";
 
 export default function CardUser() {
   const { app } = useContext(AppContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  if (location.pathname === "/") app.handleIsGameOn(false);
 
   const user = app.users[0] || {
     player: "Player",
     victories: 0,
     defeats: 0,
     totalScore: 0,
-  };
-
-  const navigate = useNavigate();
-  const GotoGame = () => {
-    navigate("/game");
-    app.handleIsGameOn(true);
   };
 
   const userPointer =
@@ -46,6 +43,33 @@ export default function CardUser() {
     (Number(user.playerLevel) > 50 && "INTERMEDIÁRIO") ||
     "INICIANTE";
 
+  const userStats = [
+    {
+      title: "Total de pontos",
+      label: "TOTAL DE PONTOS",
+      value: user.totalScore,
+      color: "gold",
+    },
+    {
+      title: "Pontos por partida",
+      label: "MÉDIA DE PONTOS POR PARTIDA",
+      value: user.percentagePointsPerWin,
+      color: colorStatus,
+    },
+    {
+      title: "Vitórias por partida",
+      label: "PORCENTAGEM DE VIÓRIAS POR PARTIDA",
+      value: user.percentageWinsPerMatch + " %",
+      color: colorStatus,
+    },
+    {
+      title: "Nível do jogador",
+      label: "NÍVEL DO JOGADOR",
+      value: Level,
+      color: colorStatus,
+    },
+  ];
+
   return (
     <Container>
       <h1>
@@ -60,7 +84,9 @@ export default function CardUser() {
             <Trophy weight="duotone" />
           </h2>
         </span>
+
         <span>{/* <hr /> */}</span>
+
         <span title="Total de derrotas">
           <h2>
             <MaskSad weight="duotone" />
@@ -69,28 +95,12 @@ export default function CardUser() {
         </span>
       </StatsContainer>
       <ScoreContainer>
-        <div title="Total de pontos">
-          <p>TOTAL DE PONTOS</p>
-          <p style={{ color: "gold" }}>
-            {user.totalScore} <Coins weight="duotone" />
-          </p>
-        </div>
-        <div title="Pontos por partida">
-          <p>MÉDIA DE PONTOS POR PARTIDA</p>
-          <p style={{ color: colorStatus }}>
-            {user.percentagePointsPerWin} ptos
-          </p>
-        </div>
-
-        <div title="Vitórias por partida">
-          <p>PORCENTAGEM DE VIÓRIAS POR PARTIDA</p>
-          <p style={{ color: colorStatus }}>{user.percentageWinsPerMatch} %</p>
-        </div>
-
-        <div title="Nível do jogador">
-          <p>NÍVEL DO JOGADOR</p>
-          <p style={{ color: colorStatus }}>{Level}</p>
-        </div>
+        {userStats.map((item, index) => (
+          <div key={index} title={item.title}>
+            <p>{item.label}</p>
+            <p style={{ color: item.color }}>{item.value}</p>
+          </div>
+        ))}
       </ScoreContainer>
       <StatsAction>
         <span>
@@ -105,7 +115,7 @@ export default function CardUser() {
           ></Modal>
         </span>
 
-        <span title="Continuar jogando" onClick={GotoGame}>
+        <span title="Continuar jogando" onClick={() => navigate("/game")}>
           <ArrowFatLineRight />
         </span>
       </StatsAction>
