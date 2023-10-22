@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import {
   ArrowFatLineRight,
   MaskSad,
@@ -21,7 +21,11 @@ export default function CardUser() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  if (location.pathname === "/") app.handleIsGameOn(false);
+  useEffect(() => {
+    if (location.pathname === "/") {
+      app.handleIsGameOn(false);
+    }
+  }, [location.pathname]);
 
   const user = app.users[0] || {
     player: "Player",
